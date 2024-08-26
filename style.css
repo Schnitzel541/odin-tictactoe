@@ -1,0 +1,27 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+.container {
+    display: flex;
+    width: 450px;
+    height: 450px;
+    flex-wrap: wrap;
+}
+
+.container > div {
+    width: 150px;
+    height: 150px;
+    outline: solid 5px black;
+}
+
+.square {
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 7rem;
+}
