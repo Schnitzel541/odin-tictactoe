@@ -32,7 +32,7 @@ const gameFlow = (() => {
 	}
   };
 
-
+  
   const getCurrentPlayer = () => currentPlayer;
 
 
@@ -49,11 +49,13 @@ const displayController = (() => {
       square.addEventListener('click', (e) => {
         if (gameBoard.board[square.id] === '') {
           e.preventDefault();
-          square.textContent = "X";
+          square.textContent = gameFlow.getCurrentPlayer().marker;
           console.log(square.id)
-          gameBoard.board[square.id] = 'x'
+          gameBoard.board[square.id] = gameFlow.getCurrentPlayer().marker;
           gameBoard.getGameBoard();
           console.log(gameBoard.board);
+
+          gameFlow.changePlayer();
         }
 
       })
