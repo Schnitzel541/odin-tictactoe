@@ -38,7 +38,6 @@ const gameFlow = (() => {
   const checkWinner = () => {
     const winnerBox = document.querySelector(".winnerBox");
     const winnerText = document.querySelector(".winnerText")
-    // Win conditions for X
     for (i in gameBoard.board) {
       if (
         gameBoard.board[0] === "X" && gameBoard.board[1] === "X" && gameBoard.board[2] === "X" ||
@@ -88,10 +87,8 @@ const displayController = (() => {
         if (gameBoard.board[square.id] === "") {
           e.preventDefault();
           square.textContent = gameFlow.getCurrentPlayer().marker;
-          console.log(square.id); // Log statement (debug)
           gameBoard.board[square.id] = gameFlow.getCurrentPlayer().marker;
           gameBoard.getGameBoard();
-          console.log(gameBoard.board); // Log statement (debug)
           gameFlow.checkWinner();
           gameFlow.changePlayer();
         }
@@ -102,5 +99,3 @@ const displayController = (() => {
 })();
 
 displayController.addListeners();
-
-console.log(gameFlow.getCurrentPlayer()); // Log statement (debug)
