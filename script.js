@@ -74,6 +74,10 @@ const gameFlow = (() => {
 
 const displayController = (() => {
 
+  const resetGame = () => {
+    window.location.reload();
+  }
+  
   const addListeners = () => {
     const squares = document.querySelectorAll(".square");
     let i = -1;
@@ -94,7 +98,7 @@ const displayController = (() => {
       });
     });
   };
-  return { addListeners };
+  return { addListeners, resetGame };
 })();
 
 displayController.addListeners();
